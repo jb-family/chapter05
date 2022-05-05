@@ -24,29 +24,23 @@ public class Person {
 	
 	//메소드 - gs
 	public String getName() {
-		return name;
+		return "이름 : " + name;
 	}
-	
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	public String getHp() {
-		return hp;
+		return "핸드폰 : " + hp;
 	}
-	
 	public void setHp(String hp) {
 		this.hp = hp;
 	}
-	
 	public String getCompany() {
-		return company;
+		return "회사 : " + company;
 	}
-	
 	public void setCompany(String company) {
 		this.company = company;
 	}
-
 	
 	//메소드 - 일반
 	

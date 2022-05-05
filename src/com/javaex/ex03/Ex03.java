@@ -15,40 +15,50 @@ import java.util.List;
 public class Ex03 {
 
 	public static void main(String[] args)throws IOException {
-	
-		
 		List<Person> pList = new ArrayList<Person>();
 		
-		InputStream in = new FileInputStream("C:\\javaStudy\\file\\PhoneDB_원본.txt");//파일불러옴
-		InputStreamReader isr = new InputStreamReader(in, "UTF-8");//번역돌림
-		BufferedReader br = new BufferedReader(isr);// 소음기장착 (권총에) 프로그램에 넣음
-
+		//1. 파일을 읽어온다.
+		InputStream in = new FileInputStream("C:\\javaStudy\\file\\PhoneDB_원본.txt");
+		//2. 파일을 번역한다. in을 번역한다. 뭘로? UTF-8로
+		InputStreamReader isr = new InputStreamReader(in, "UTF-8"); 
+		//3. 번역된 파일을 프로그램에 보내준다.
+		BufferedReader br = new BufferedReader(isr);
 		
-		
-
 		while(true) {
-			String str = br.readLine(); 
+			String str = br.readLine();
 			if(str == null) {
 				break;
 			}
-				String[] sArray = str.split(",");
-				pList.add(new Person(sArray[0], sArray[1], sArray[2]));
-		}//while끝
+			String[] sArray = str.split(",");
+			pList.add(new Person(sArray[0], sArray[1], sArray[2]));
+		}//while문 끝
 		
-		pList.add(new Person("황일영", "010-2221-2222", "02-333-3333"));
+		pList.add(new Person("황일영", "010-2221-2222", "02-123-4567"));
 		
-		System.out.println("=====================================================");
 		
-		OutputStream out = new FileOutputStream("C:\\javaStudy\\file\\PhoneDB_원본.txt");//파일 복사
-		OutputStreamWriter osw = new OutputStreamWriter(out, "UTF-8");
+		
+		
+		
+		//1. 파일을 복사한다.
+		OutputStream out = new FileOutputStream("C:\\javaStudy\\file\\PhoneDB_원본.txt");
+		//2. 복사할 파일을 번역한다.
+		OutputStreamWriter osw = new OutputStreamWriter(out, "UTF-8");//
+		//3. 프로그램에서 번역할 파일을 번역기에 보내준다.
 		BufferedWriter bw = new BufferedWriter(osw);
 		
-				for(int i = 0; i < pList.size(); i++) {
-					bw.write(pList.get(i).toString());
-					bw.newLine();
-				}//for문 끝
-			
-			
+		for(int i = 0; i < pList.size(); i++) {
+			bw.write(pList.get(i).getName());
+			bw.newLine();
+			bw.write(pList.get(i).getHp());
+			bw.newLine();
+			bw.write(pList.get(i).getCompany());
+			bw.newLine();
+		}
+		System.out.println(pList.toString());	
+		
+		
+		
+		
 		
 		
 		
@@ -56,7 +66,6 @@ public class Ex03 {
 		
 		bw.close();
 		br.close();
-		
 	}
 
 }
