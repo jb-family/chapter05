@@ -47,11 +47,11 @@ public class Ex03 {
 		BufferedWriter bw = new BufferedWriter(osw);
 		
 		for(int i = 0; i < pList.size(); i++) {
-			bw.write(pList.get(i).getName());
+			bw.write("이름 : " + pList.get(i).getName());
 			bw.newLine();
-			bw.write(pList.get(i).getHp());
+			bw.write("핸드폰 : " + pList.get(i).getHp());
 			bw.newLine();
-			bw.write(pList.get(i).getCompany());
+			bw.write("회사 : " + pList.get(i).getCompany());
 			bw.newLine();
 		}
 		System.out.println(pList.toString());	

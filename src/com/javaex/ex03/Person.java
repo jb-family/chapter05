@@ -24,19 +24,19 @@ public class Person {
 	
 	//메소드 - gs
 	public String getName() {
-		return "이름 : " + name;
+		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
 	public String getHp() {
-		return "핸드폰 : " + hp;
+		return hp;
 	}
 	public void setHp(String hp) {
 		this.hp = hp;
 	}
 	public String getCompany() {
-		return "회사 : " + company;
+		return company;
 	}
 	public void setCompany(String company) {
 		this.company = company;
