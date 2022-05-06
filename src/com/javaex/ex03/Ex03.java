@@ -30,8 +30,16 @@ public class Ex03 {
 				break;
 			}
 			String[] sArray = str.split(",");
+			
 			pList.add(new Person(sArray[0], sArray[1], sArray[2]));
 		}//while문 끝
+		
+		for(Person p : pList) {
+			System.out.println("이름 :" + p.getName());
+			System.out.println("핸드폰 :" + p.getHp());
+			System.out.println("회사 :" + p.getCompany());
+			System.out.println("");
+		}
 		
 		pList.add(new Person("황일영", "010-2221-2222", "02-123-4567"));
 		
@@ -54,8 +62,13 @@ public class Ex03 {
 			bw.write("회사 : " + pList.get(i).getCompany());
 			bw.newLine();
 		}
-		System.out.println(pList.toString());	
-		
+		System.out.println("=================================");	
+		for(Person p : pList) {
+			System.out.println("이름 :" + p.getName());
+			System.out.println("핸드폰 :" + p.getHp());
+			System.out.println("회사 :" + p.getCompany());
+			System.out.println("");
+		}
 		
 		
 		
